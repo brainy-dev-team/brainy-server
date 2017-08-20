@@ -152,7 +152,7 @@ function pairUsers(){
           }
         ],
         body: JSON.stringify({
-          text: `Paired mode! Here are the groups:\n${msgGroups}`
+          text: `*Paired mode!*\nHere are the groups:\n${msgGroups}`
         })
       }, function(error, response, body){
         console.log('done');

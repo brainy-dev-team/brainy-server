@@ -6,35 +6,79 @@
         "id": 1,
         "image": "https://1pv2qf2te2gm20k28u30ivdc-wpengine.netdna-ssl.com/wp-content/uploads/2007/01/attention-games.jpg",
         
-        "answer": "left"
+        "answer": "Left"
       },
       {
-        "question": "What is unusual about the following words: revive, banana, grammar, voodoo, assess, potato, dresser, uneven?",
+        "question": "Which letter of the English alphabet flies, sings, and stings?",
         "title": "Word Play",
         "id": 2,
         "image": "null",
-        "answer": "something"
+        "answer": "B"
       },
+    
       {
-        "question": "What makes this number unique -- 8,549,176,320?",
-        "title": "Game of Numbers",
+        "question": "Bob’s father has 4 children. Momo, Meme, and Mumu are three of them. Who’s the fourth?",
+        "title": "Family",
         "id": 3,
         "image": "null",
-        "answer": "something"
+        "answer": "Bob."
       },
+    
      {
-        "question": "A palindrome is a word that reads the same when spelled backwards (eg rotavator). How could the following word be considered a palindrome? FOOTSTOOL",
-        "title": "A Palindrome",
+        "question": "If you have me, you want to share me. If you share me, you haven't got me. What am I?",
+        "title": "CIA",
         "id": 4,
         "image": "null",
-        "answer": "something"
+        "answer": "Secret."
       },
      {
-        "question": "What are the next three numbers in this series? 4, 6, 12, 18, 30, 42, 60, 72, 102, 108, ?, ?, ?,",
-        "title": "Guess the Pattern",
+        "question": "What is always coming but never arrives?",
+        "title": "No use waiting",
         "id": 5,
         "image": "null",
-        "answer": "something"
+        "answer": "Tomorrow."
+      },
+     {
+        "question": "What goes all around town but never comes inside?",
+        "title": "Around town",
+        "id": 6,
+        "image": "null",
+        "answer": "Street."
+      },
+        {
+        "question": "What goes all around town but never comes inside?",
+        "title": "Around town",
+        "id": 7,
+        "image": "null",
+        "answer": "The street."
+      },
+    {
+        "question": "You are driving a bus. At the first stop, two women get on. The second stop, three men get on and one woman gets off. At the third stop, three kids and their mom get on, and a man gets off. The bus is grey, and it is raining outside. What color is the bus driver’s hair?",
+        "title": "The driver",
+        "id": 8,
+        "image": "null",
+        "answer": "Your hair color!."
+      },
+    {
+        "question": "Mike is a butcher. He is 5’10” tall. What does he weigh?",
+        "title": "Butcher",
+        "id": 9,
+        "image": "null",
+        "answer": "Meat."
+      },
+    {
+        "question": "If there are 12 fish and half of them drown, how many are there?",
+        "title": "Fish",
+        "id": 10,
+        "image": "null",
+        "answer": "12"
+      },
+        {
+        "question": "I met a man with seven wives.Each wife had seven sacks,Each sack had seven cats,Each cat had seven kits.Kits, cats, sacks and wives,How many were going to St. Ives?",
+        "title": "On the road",
+        "id": 11,
+        "image": "null",
+        "answer": "One."
       }
   ]
 }
