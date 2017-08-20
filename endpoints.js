@@ -25,6 +25,7 @@ function getProblem(req, res){
 }
 
 function validateAnswer(req, res){
+  console.log('validating');
   console.log(req.body);
   res.send('validate');
 }
