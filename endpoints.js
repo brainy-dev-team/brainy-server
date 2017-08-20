@@ -37,44 +37,60 @@ function getProblem(req, res){
 }
 
 function setupBrainy(req, res){
-  const inputs = req.body.text.split(' ');
-  const type = inputs[0];
-  const duration = inputs[1];
-  const unit = inputs[2]
-  const pairedMode = inputs[3];
-  const file = path.join(__dirname, `${type}.json`);
-
-  score.startDate = moment();
-  score.endDate = moment().add(Number(duration), unit);
-  score.duration = moment.duration(Number(duration), unit).asMilliseconds();
-  console.log(file);
-  console.log('setup is:');
-  console.log(score);
-  const resJson = {};
-  if(pairedMode){
-    pairUsers()
-  }
-  fs.readFile(file, 'utf8', (err, data) => {
-    if(err){
-      res.send(err);
-    }
-    console.log(data);
-    const jsonData = JSON.parse(data).problems;
-    const random = Math.floor(Math.random() * jsonData.length);
-    const selected = jsonData[random];
-    console.log('selected is:');
-    console.log(selected);
-    score.question = selected.question;
-    score.answer = selected.answer;
-    resJson.text = `<#general> New Brainy Starting Now!\nHere is the question:\n*${selected.title}*\n${selected.question}`;
-    sendBrainy(resJson, pairedMode);
-    setTimeout(function(){ 
-      timeUp();
-    }, score.duration);
+  if(score.question){
     res.json({
-      text: 'Brainy will be send shortly!'
+      text: 'Oh? There is another brainy in session already!',
+      attachments: [{
+        fallback: 'Whoops!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+      }]
     });
-  });
+  } else {
+    const inputs = req.body.text.split(' ');
+    const type = inputs[0];
+    const duration = inputs[1];
+    const unit = inputs[2]
+    const pairedMode = inputs[3];
+    const file = path.join(__dirname, `${type}.json`);
+
+    score.startDate = moment();
+    score.endDate = moment().add(Number(duration), unit);
+    score.duration = moment.duration(Number(duration), unit).asMilliseconds();
+    console.log(file);
+    console.log('setup is:');
+    console.log(score);
+    const resJson = {};
+    if(pairedMode){
+      pairUsers()
+    }
+    fs.readFile(file, 'utf8', (err, data) => {
+      if(err){
+        res.json({
+          text: 'Are you sure you spelt the question type correctly?',
+          attachments: [{
+            fallback: 'Whoops!',
+            image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+          }]
+        });
+      }
+      console.log(data);
+      const jsonData = JSON.parse(data).problems;
+      const random = Math.floor(Math.random() * jsonData.length);
+      const selected = jsonData[random];
+      console.log('selected is:');
+      console.log(selected);
+      score.question = selected.question;
+      score.answer = selected.answer;
+      resJson.text = `<#general> New Brainy Starting Now!\nHere is the question:\n*${selected.title}*\n${selected.question}`;
+      sendBrainy(resJson, pairedMode);
+      setTimeout(function(){ 
+        timeUp();
+      }, score.duration);
+      res.json({
+        text: 'Brainy will be send shortly!'
+      });
+    });
+  }
 }
 
 function sendBrainy(brainyObj, pairedMode){
