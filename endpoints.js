@@ -1,6 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 
+const score = {};
+
 function testServer(req, res){
   res.send('Hello World');
 }
@@ -22,7 +24,13 @@ function getProblem(req, res){
   });
 }
 
+function validateAnswer(req, res){
+  console.log(req.body);
+  res.send('validate');
+}
+
 module.exports = {
   getProblem,
   testServer,
+  validateAnswer
 }
