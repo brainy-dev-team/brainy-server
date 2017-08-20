@@ -123,7 +123,7 @@ function sendBrainy(brainyObj, pairedMode){
 function pairUsers(){
   request.get({
     method: 'GET',
-    uri: 'https://slack.com/api/channels.list?token=xoxp-229867051814-228975318018-229134492562-377159260b91a6bccda351583b3d7aa5&pretty=1',
+    uri: 'https://slack.com/api/channels.list?token=xoxp-229867051814-228975318018-228518942560-f7a15369142cbb0ae92884e53c94f4b7&pretty=1',
   }, function(error, response, body){
     if(error){
       console.log(error);
@@ -145,7 +145,7 @@ function pairUsers(){
     const memberNames = [];
     request.get({
     method: 'GET',
-      uri: 'https://slack.com/api/users.list?token=xoxp-229867051814-228975318018-229134492562-377159260b91a6bccda351583b3d7aa5&pretty=1',
+      uri: 'https://slack.com/api/users.list?token=xoxp-229867051814-228975318018-228518942560-f7a15369142cbb0ae92884e53c94f4b7&pretty=1',
     }, function(error, response, body){
       if(error){
         console.log(error);
