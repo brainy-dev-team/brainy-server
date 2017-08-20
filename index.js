@@ -4,6 +4,7 @@ const app = express();
 const { testServer, getProblem, validateAnswer } = require('./endpoints');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', testServer);
 

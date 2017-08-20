@@ -27,8 +27,8 @@ function getProblem(req, res){
 function validateAnswer(req, res){
   console.log('validating');
   console.log(req);
-  console.log(req.text);
-  res.send('validate');
+  console.log(req.body.text);
+  res.json(req.body.text);
 }
 
 module.exports = {
