@@ -165,11 +165,15 @@ function validateAnswer(req, res){
     });
     res.json({
       text: `Yay! You got it! Look to see who else got it at ${score.endDate}!`
-    })
+    });
+  } else if( !score.question ){
+    res.json({
+      text: 'Whoops! Looks like we don\'t have a question yet... wait until one gets set up!'
+    });
   } else {
     res.json({
       text: 'Oh... not what we were looking for! Keep trying though! Feel free to ask your colleagues for hints!'
-    })
+    });
   }
 }
 
