@@ -1,0 +1,39 @@
+{
+  "problems": [
+      {
+        "question": "On this year Capgemini was born",
+        "title": "Capgemini",
+        "id": 1,
+        "image": "null",
+        "answer": "1967"
+      },
+      {
+        "question": "This many people work at Capgemini",
+        "title": "Capgemini",
+        "id": 2,
+        "image": "null",
+        "answer": "190000"
+      },
+     {
+        "question": "Capgemini was founded by this person",
+        "title": "Capgemini",
+        "id": 3,
+        "image": "null",
+        "answer": "Serge Kampf"
+      },
+      {
+        "question": "Capgemini’s revenue in 2016 was this many billions of euros",
+        "title": "Capgemini",
+        "id": 4,
+        "image": "null",
+        "answer": "12.54"
+      },
+      {
+        "question": "Capgemini’s CEO is this man",
+        "title": "Capgemini",
+        "id": 5,
+        "image": "null",
+        "answer": "Paul Hermelin"
+      }
+  ]
+}

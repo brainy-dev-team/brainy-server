@@ -6,7 +6,7 @@ function testServer(req, res){
 }
 
 function getProblem(req, res){
-  const file = path.join(__dirname, './questions/jeopardy.json');
+  const file = path.join(__dirname, 'jeopardy.json');
   console.log(file);
   const resJson = {};
   fs.readFile(file, 'utf8', (err, data) => {
