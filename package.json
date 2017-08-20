@@ -6,6 +6,8 @@
   "author": "Rodaan <rodaan.rabang@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "nodegit": "^0.20.1",
+    "path": "^0.12.7"
   }
 }

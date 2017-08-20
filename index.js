@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
-const { getProblem } = require('./endpoints');
+const { testServer, getProblem } = require('./endpoints');
 
-app.get('/', getProblem);
+app.get('/', testServer);
 
-app.post('/', getProblem);
+app.post('/', testServer);
+
+app.post('/getQuestion', getProblem)
 
 app.listen(3000, function(){
   console.log('Example app listening on post 3000!');
