@@ -12,4 +12,4 @@ RUN rm -r questions/; git clone https://github.com/brainy-dev-team/questions-rep
 
 EXPOSE 3000
 
-CMD ./pull-transforms.sh > /dev/null 2>&1 & node index.js
+CMD node index.js
