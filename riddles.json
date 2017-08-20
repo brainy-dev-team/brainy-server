@@ -6,14 +6,14 @@
         "id": 1,
         "image": "null",
         
-        "answer": "A stamp."
+        "answer": "stamp"
       },
       {
         "question": "What has a head and a tail, but no body?",
         "title": "title2",
         "id": 2,
         "image": "null",
-        "answer": "A coin."
+        "answer": "coin"
       },
    
       {
@@ -21,7 +21,7 @@
         "title": "A Room",
         "id": 3,
         "image": "null",
-        "answer": "Mushroom."
+        "answer": "Mushroom"
       },
     
       {
@@ -37,42 +37,42 @@
         "title": "Spell Check",
         "id": 5,
         "image": "null",
-        "answer": "Window."
+        "answer": "Window"
       },
       {
         "question": "What grows when it eats, but dies when it drinks?",
         "title": "Food and drink",
         "id": 6,
         "image": "null",
-        "answer": "Fire."
+        "answer": "Fire"
       },
       {
         "question": "I travel all over the world, but always stay in my corner. What am I?",
         "title": "Travel",
         "id": 7,
         "image": "null",
-        "answer": "Stamp."
+        "answer": "Stamp"
       },
         {
         "question": "I can be cracked, made, told, and played. What am I?",
         "title": "Fun",
         "id": 8,
         "image": "null",
-        "answer": "Joke."
+        "answer": "Joke"
       },
        {
         "question": "I will disappear every time you say my name. What am I?",
         "title": "Fun",
         "id": 9,
         "image": "null",
-        "answer": "Silence."
+        "answer": "Silence"
       },
       {
         "question": "I have a head and a tail but my eyes can never see my tail. What am I?",
         "title": "Fun",
         "id": 10,
         "image": "null",
-        "answer": "Coin."
+        "answer": "Coin"
       }
      
   ]

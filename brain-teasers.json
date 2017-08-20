@@ -6,7 +6,7 @@
         "id": 1,
         "image": "https://1pv2qf2te2gm20k28u30ivdc-wpengine.netdna-ssl.com/wp-content/uploads/2007/01/attention-games.jpg",
         
-        "answer": "Left"
+        "answer": "left"
       },
       {
         "question": "Which letter of the English alphabet flies, sings, and stings?",
@@ -21,7 +21,7 @@
         "title": "Family",
         "id": 3,
         "image": "null",
-        "answer": "Bob."
+        "answer": "Bob"
       },
     
      {
@@ -29,28 +29,28 @@
         "title": "CIA",
         "id": 4,
         "image": "null",
-        "answer": "Secret."
+        "answer": "Secret"
       },
      {
         "question": "What is always coming but never arrives?",
         "title": "No use waiting",
         "id": 5,
         "image": "null",
-        "answer": "Tomorrow."
+        "answer": "Tomorrow"
       },
      {
         "question": "What goes all around town but never comes inside?",
         "title": "Around town",
         "id": 6,
         "image": "null",
-        "answer": "Street."
+        "answer": "Street"
       },
         {
         "question": "What goes all around town but never comes inside?",
         "title": "Around town",
         "id": 7,
         "image": "null",
-        "answer": "The street."
+        "answer": "The street"
       },
     {
         "question": "You are driving a bus. At the first stop, two women get on. The second stop, three men get on and one woman gets off. At the third stop, three kids and their mom get on, and a man gets off. The bus is grey, and it is raining outside. What color is the bus driver’s hair?",
@@ -64,7 +64,7 @@
         "title": "Butcher",
         "id": 9,
         "image": "null",
-        "answer": "Meat."
+        "answer": "Meat"
       },
     {
         "question": "If there are 12 fish and half of them drown, how many are there?",
@@ -78,7 +78,7 @@
         "title": "On the road",
         "id": 11,
         "image": "null",
-        "answer": "One."
+        "answer": "One"
       }
   ]
 }
