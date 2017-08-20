@@ -66,7 +66,7 @@ function setupBrainy(req, res){
     console.log(selected);
     score.answer = selected.answer;
     resJson.text = `<#general> New Brainy Starting Now!\nHere is the question:\n*${selected.title}*\n${selected.question}`;
-    sendBrainy(resJson);
+    sendBrainy(resJson, pairedMode);
     setTimeout(function(){ 
       timeUp();
     }, score.duration);
@@ -76,7 +76,18 @@ function setupBrainy(req, res){
   });
 }
 
-function sendBrainy(brainyObj){
+function sendBrainy(brainyObj, pairedMode){
+  if(pairedMode){
+    brainyObj.attachments = [{
+      fallback: 'Question!',
+      image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_pair.png?raw=true'
+    }]
+  } else {
+    brainyObj.attachments = [{
+      fallback: 'Question!',
+      image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_solve.png?raw=true'
+    }]
+  }
   request.post({
     method: 'POST',
     uri: 'https://hooks.slack.com/services/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',
@@ -187,6 +198,14 @@ function timeUp(){
     }
     const isSolved = score.solvers.length != 0 ? true : false;
     const msg = isSolved ? 'Here are the solvers:' : 'There were no solvers... :(';
+    const image = isSolved ? [{
+        fallback: 'Yay!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_yay.png?raw=true'
+      }] :
+      [{
+        fallback: 'Whoops!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+      }];
     request.post({
       method: 'POST',
       uri: 'https://hooks.slack.com/services/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',
@@ -198,6 +217,7 @@ function timeUp(){
       ],
       body: JSON.stringify({
         text: msg,
+        attachments: image,
       })
     }, function(error, response, body){
       console.log('done');
@@ -239,17 +259,34 @@ function validateAnswer(req, res){
       time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
     });
     res.json({
-      text: `Yay! You got it! Look to see who else got it at ${score.endDate}!`
+      text: `Yay! You got it! Look to see who else got it at ${score.endDate}!`,
+      attachments: [{
+        fallback: 'Good work!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_yay.png?raw=true'
+      }]
     });
   } else if( !score.question ){
     res.json({
-      text: 'Whoops! Looks like we don\'t have a question yet... wait until one gets set up!'
+      text: 'Whoops! Looks like we don\'t have a question yet... wait until one gets set up!',
+      attachments: [{
+        fallback: 'Whoops!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+      }]
     });
   } else {
     res.json({
-      text: 'Oh... not what we were looking for! Keep trying though! Feel free to ask your colleagues for hints!'
+      text: 'Oh... not what we were looking for! Keep trying though! Feel free to ask your colleagues for hints!',
+      attachments: [{
+        fallback: 'Whoops!',
+        image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+      }]
     });
   }
+}
+
+function resetService(req, res){
+  score = [];
+  res.send('Service reset!');
 }
 
 module.exports = {
@@ -257,4 +294,5 @@ module.exports = {
   testServer,
   validateAnswer,
   setupBrainy,
+  resetService,
 }
