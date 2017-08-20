@@ -50,14 +50,14 @@
         "title": "Around town",
         "id": 7,
         "image": "null",
-        "answer": "The street"
+        "answer": "street"
       },
     {
         "question": "You are driving a bus. At the first stop, two women get on. The second stop, three men get on and one woman gets off. At the third stop, three kids and their mom get on, and a man gets off. The bus is grey, and it is raining outside. What color is the bus driver’s hair?",
         "title": "The driver",
         "id": 8,
         "image": "null",
-        "answer": "Your hair color!."
+        "answer": "Your hair color"
       },
     {
         "question": "Mike is a butcher. He is 5’10” tall. What does he weigh?",

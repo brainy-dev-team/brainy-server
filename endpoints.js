@@ -251,10 +251,14 @@ function timeUp(){
 function validateAnswer(req, res){
   console.log('validating');
   console.log(req.body);
-  console.log('submitted answer');
+  console.log('submitted answer:');
   console.log(req.body.text);
+  console.log('submitted validated answer:');
+  console.log(req.body.text.toLowerCase());
   console.log(score);
-  if(score.answer === req.body.text.toLowerCase().trim()){
+  console.log('the right answer is:');
+  console.log(score.answer);
+  if(score.answer.toLowerCase() == req.body.text.toLowerCase().trim()){
     score.solvers.push({
       username: req.body.user_name,
       time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
