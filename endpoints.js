@@ -154,7 +154,7 @@ function timeUp(){
 
 function validateAnswer(req, res){
   console.log('validating');
-  console.log(req);
+  console.log(req.body);
   console.log('submitted answer');
   console.log(req.body.text);
   console.log(score);
