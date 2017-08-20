@@ -6,7 +6,7 @@
         "id": 1,
         "image": "https://1pv2qf2te2gm20k28u30ivdc-wpengine.netdna-ssl.com/wp-content/uploads/2007/01/attention-games.jpg",
         
-        "answer": "Left"
+        "answer": "left"
       },
       {
         "question": "What is unusual about the following words: revive, banana, grammar, voodoo, assess, potato, dresser, uneven?",
@@ -14,29 +14,27 @@
         "id": 2,
         "image": "null",
         "answer": "something"
-      }
-    
+      },
       {
         "question": "What makes this number unique -- 8,549,176,320?",
         "title": "Game of Numbers",
         "id": 3,
         "image": "null",
-        "answer": "It contains each number, zero through nine, in alphabetical order."
-      }
-    
+        "answer": "something"
+      },
      {
         "question": "A palindrome is a word that reads the same when spelled backwards (eg rotavator). How could the following word be considered a palindrome? FOOTSTOOL",
         "title": "A Palindrome",
         "id": 4,
         "image": "null",
-        "answer": "Footstool is a palindrome when written in Morse code."
-      }
+        "answer": "something"
+      },
      {
         "question": "What are the next three numbers in this series? 4, 6, 12, 18, 30, 42, 60, 72, 102, 108, ?, ?, ?,",
         "title": "Guess the Pattern",
         "id": 5,
         "image": "null",
-        "answer": "138, 150, 180."
+        "answer": "something"
       }
   ]
 }

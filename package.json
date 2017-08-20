@@ -7,8 +7,12 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "es6-promise": "^4.1.1",
     "express": "^4.15.4",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.18.1",
     "nodegit": "^0.20.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "request": "^2.81.0"
   }
 }
