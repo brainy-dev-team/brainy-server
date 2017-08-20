@@ -1,0 +1,11 @@
+{
+  "name": "brainy-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/brainy-dev-team/brainy-server.git",
+  "author": "Rodaan <rodaan.rabang@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
