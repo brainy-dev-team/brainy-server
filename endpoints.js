@@ -64,6 +64,7 @@ function setupBrainy(req, res){
     const selected = jsonData[random];
     console.log('selected is:');
     console.log(selected);
+    score.question = selected.question;
     score.answer = selected.answer;
     resJson.text = `<#general> New Brainy Starting Now!\nHere is the question:\n*${selected.title}*\n${selected.question}`;
     sendBrainy(resJson, pairedMode);
