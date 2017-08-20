@@ -6,7 +6,7 @@ function testServer(req, res){
 }
 
 function getProblem(req, res){
-  const file = path.join(__dirname, '..', 'questions');
+  const file = path.join('/var/app/current/questions');
   const resJson = {};
   console.log('looking at:');
   console.log(file);
