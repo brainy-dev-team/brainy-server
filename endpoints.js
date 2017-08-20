@@ -59,7 +59,7 @@ function setupBrainy(req, res){
     const random = Math.floor(Math.random() * jsonData.length);
     const selected = jsonData[random];
     score.answer = selected.answer;
-    resJson.text = `*${selected.title}*\n${selected.question}`;
+    resJson.text = `<#general> New Brainy Starting Now!\nHere is the question:\n*${selected.title}*\n${selected.question}`;
     setTimeout(timeUp, score.duration);
     res.json(resJson);
   });
@@ -128,7 +128,7 @@ function validateAnswer(req, res){
   console.log('validating');
   console.log(req);
   console.log(req.body);
-  if(score.answer === req.body.text.toLowerCase()){
+  if(score.answer === req.body.text.toLowerCase().trim()){
     score.solvers.push({
       username: req.body.user,
       time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
