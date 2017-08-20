@@ -160,7 +160,7 @@ function validateAnswer(req, res){
   console.log(score);
   if(score.answer === req.body.text.toLowerCase().trim()){
     score.solvers.push({
-      username: req.body.user,
+      username: req.body.user_name,
       time: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
     });
     res.json({
