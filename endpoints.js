@@ -127,65 +127,91 @@ function pairUsers(){
   }, function(error, response, body){
     if(error){
       console.log(error);
-    }
-    console.log(body);
-    const body1 = JSON.parse(body);
-    let members;
-    let selectedChannel;
-    for(let i = 0; i < body1.channels.length; i += 1){
-      if(body1.channels[i].name === 'general'){
-        selectedChannel = body1.channels[i];
-        members = selectedChannel.members;
-        console.log('selected channel');
-        console.log(selectedChannel);
-        console.log(members)
-        break;
-      }
-    }
-    const memberNames = [];
-    request.get({
-    method: 'GET',
-      uri: 'https://slack.com/api/users.list?token=xoxp-229867051814-228975318018-228518942560-f7a15369142cbb0ae92884e53c94f4b7&pretty=1',
-    }, function(error, response, body){
-      if(error){
-        console.log(error);
-      }
+      res.json({
+        text: 'The pairing feature is unavailable at the moment! Sorry!',
+        attachments: [{
+          fallback: 'Whoops!',
+          image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+        }]
+      });
+    } else {
       console.log(body);
-      const body2 = JSON.parse(body);
-      for(let j = 0; j < body2.members.length; j += 1){
-        if(members.indexOf(body2.members[j].id) !== -1){
-          memberNames.push(body2.members[j].name);
+      const body1 = JSON.parse(body);
+      let members;
+      let selectedChannel;
+      for(let i = 0; i < body1.channels.length; i += 1){
+        if(body1.channels[i].name === 'general'){
+          selectedChannel = body1.channels[i];
+          members = selectedChannel.members;
+          console.log('selected channel');
+          console.log(selectedChannel);
+          console.log(members)
+          break;
         }
       }
-      console.log('membernames');
-      console.log(memberNames);
-      shuffle(memberNames);
-      console.log('group');
-      console.log(memberNames);
-      let msgGroups = '';
-      for(let i = 0; i < memberNames.length; i += 1){
-        if(i % 2 === 0){
-          msgGroups += `Here is a group:\n<@${memberNames[i]}> and `;
-        } else {
-          msgGroups += `<@${memberNames[i]}>\n`;
-        }
-      }
-      request.post({
-        method: 'POST',
-        uri: 'https://hooks.slack.com/services/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',
-        headers: [
-          {
-            name: 'content-type',
-            value: 'application/json'
-          }
-        ],
-        body: JSON.stringify({
-          text: `*Paired mode!*\nHere are the groups:\n${msgGroups}`
-        })
+      const memberNames = [];
+      request.get({
+      method: 'GET',
+        uri: 'https://slack.com/api/users.list?token=xoxp-229867051814-228975318018-228518942560-f7a15369142cbb0ae92884e53c94f4b7&pretty=1',
       }, function(error, response, body){
-        console.log('done');
-      })
-    });
+        if(error){
+          console.log(error);
+          res.json({
+            text: 'The pairing feature is unavailable at the moment! Sorry!',
+            attachments: [{
+              fallback: 'Whoops!',
+              image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+            }]
+          });
+        } else {
+          console.log(body);
+          const body2 = JSON.parse(body);
+          for(let j = 0; j < body2.members.length; j += 1){
+            if(members.indexOf(body2.members[j].id) !== -1){
+              memberNames.push(body2.members[j].name);
+            }
+          }
+          console.log('membernames');
+          console.log(memberNames);
+          shuffle(memberNames);
+          console.log('group');
+          console.log(memberNames);
+          let msgGroups = '';
+          for(let i = 0; i < memberNames.length; i += 1){
+            if(i % 2 === 0){
+              msgGroups += `Here is a group:\n<@${memberNames[i]}>`;
+            } else {
+              msgGroups += ` and <@${memberNames[i]}>\n`;
+            }
+          }
+          request.post({
+            method: 'POST',
+            uri: 'https://hooks.slack.com/services/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',
+            headers: [
+              {
+                name: 'content-type',
+                value: 'application/json'
+              }
+            ],
+            body: JSON.stringify({
+              text: `*Paired mode!*\nHere are the groups:\n${msgGroups}`
+            })
+          }, function(error, response, body){
+            if(error){
+              console.log(error);
+                res.json({
+                text: 'The pairing feature is unavailable at the moment! Sorry!',
+                attachments: [{
+                  fallback: 'Whoops!',
+                  image_url: 'https://github.com/brainy-dev-team/brainy_hack_icons/blob/master/brain_merp.png?raw=true'
+                }]
+              });
+            }
+            console.log('done');
+          })
+        }
+      });
+    }
   });
 }
 
